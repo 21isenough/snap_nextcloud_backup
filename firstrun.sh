@@ -68,9 +68,9 @@ do
     fi
 done
 
-sed -i "s%^DATADIR=.*%DATADIR=${DATADIR}%" variables
-sed -i "s%^DESTDIR=.*%DESTDIR=${DESTDIR}%" variables
-sed -i "s%^NUMBCK=.*%NUMBCK=${NUMBCK}%" variables
+sed -i "s%^DATADIR=.*%DATADIR=${DATADIR}%" snap_nextcloud_backup.sh
+sed -i "s%^DESTDIR=.*%DESTDIR=${DESTDIR}%" snap_nextcloud_backup.sh
+sed -i "s%^NUMBCK=.*%NUMBCK=${NUMBCK}%" snap_nextcloud_backup.sh
 
 echo "enjoy your nextcloud, stay safe with your backups!"
 echo "you can now schedule snap_nextcloud_backup.sh in crontab"

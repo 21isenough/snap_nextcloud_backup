@@ -20,13 +20,13 @@ info()
 } # end info
 
 info "Checking Backup destination"
-if [[ -d ${DESTDIR} ]]
+if [[ -d ${DESTDIR}/snap ]]
 then
     info "Destination exist"
 else
     info "Creating destination folder"
     mkdir -p ${DESTDIR}/snap
-    chmod -r 700 ${DESTDIR}
+    chmod -R 700 ${DESTDIR}
 fi
 
 
@@ -38,8 +38,8 @@ then
     LASTBCK=`ls -tr -1 ${BCKDIR} | tail -1`
     info "Archiving Snap confing backup"
     tar -zcf ${DESTDIR}/snap/${LASTBCK}\_nextcloud-backup.tar.gz ${BCKDIR}/${LASTBCK}
-    info "Removing local backup"
-    rm -Rf ${BCKDIR}/${LAST}
+    # info "Removing local backup"   # Why removing the backup that was just created?
+    # rm -Rf ${BCKDIR}/${LAST}
 else
     info "Nextcloud export failed, exiting..."
     exit 1
